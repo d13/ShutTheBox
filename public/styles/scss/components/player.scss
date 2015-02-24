@@ -1,0 +1,43 @@
+
+.app-players {
+  font-size: 13px;
+}
+
+.player-title {
+  display: inline-block;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 1.8em;
+}
+
+.player-scoreboard {
+  display: inline-block;
+  vertical-align: middle;
+}
+.player-list {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.player-profile {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin: 0 10px;
+  background-color: #f0f0f0;
+
+  h2, p {
+    margin: 4px 0;
+  }
+  &.is-active {
+    box-shadow: 0 0 0 1px #9FCF9F;
+    background-color: #DAF0DA;
+  }
+  &.is-done {
+    box-shadow: 0 0 0 1px #D0CEBC;
+    background-color: #F0EFDA;
+  }
+}

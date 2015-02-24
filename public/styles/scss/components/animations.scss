@@ -1,0 +1,40 @@
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@keyframes bounceScale {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(0.75); }
+  50%  { transform: scale(1.2); }
+  75%  { transform: scale(0.85); }
+  100% { transform: scale(1.1); }
+}
+
+.animation-bounceScale {
+  animation: bounceScale .4s linear;
+}
+.animation-bounceScale-hover {
+  &:hover {
+    @extend .animation-bounceScale;
+  }
+}
+
+.animation-fadeIn {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+.animation-fadeIn-hover {
+  &:hover {
+    @extend .animation-fadeIn;
+  }
+}
+
+.animation-delay-short {
+  animation-delay: 0.7s;
+}
+.animation-delay-medium {
+  animation-delay: 1.2s;
+}
+.animation-delay-long {
+  animation-delay: 1.6s;
+}

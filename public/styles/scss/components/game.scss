@@ -1,0 +1,13 @@
+.app-game {
+  @extend .animation-fadeIn;
+  @extend .animation-delay-short;
+  padding: 15px;
+}
+.app-game-controls {
+  padding: 10px 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #f6f6f6;
+}

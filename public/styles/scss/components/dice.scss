@@ -1,0 +1,72 @@
+.app-dice {
+}
+
+.dice-indicator {
+  display: inline-block;
+  line-height: 1;
+  padding: 0.2em;
+  vertical-align: middle;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+
+  border-radius: 0.2em;
+  background-color: #f6f6f6;
+  color: #333;
+  box-shadow: 0 6px 4px -2px rgba(0,0,0,0.5);
+  &.dice-not-rolled {
+    opacity: 0.5;
+  }
+}
+
+.dice-button {
+  display: inline-block;
+  cursor: pointer;
+
+  @extend .animation-bounceScale-hover;
+
+  .dice-indicator {
+    transform: rotateZ(7deg);
+    margin: 0;
+  }
+  .dice-indicator + .dice-indicator {
+    margin-left: -0.5em;
+    position: relative;
+  }
+}
+
+.dice-controls {
+  line-height: 2.5;
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  text-align: center;
+
+  transition: opacity 0.25s linear;
+
+  &.is-blocked {
+    opacity: 0;
+    user-select: none;
+  }
+
+  > * {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+}
+.dice-result {
+  margin-top: 10px;
+  margin-bottom: 40px;
+
+  text-align: center;
+  font-size: 36px;
+}
+.dice-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dice-sum {
+  dt, dd {
+    display: inline-block;
+  }
+}

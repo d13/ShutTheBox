@@ -1,0 +1,110 @@
+.app-dice {
+}
+
+.btn-box {
+  transition: opacity 0.25s linear;
+
+  &.is-blocked {
+    opacity: 0;
+    user-select: none;
+  }
+}
+
+.box-number-list {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.box-number-item {
+  display: inline-block;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+[data-number-state="selectable"],
+[data-number-state="pending"] {
+  cursor: pointer;
+}
+
+.box-number-indicator {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 90px;
+  perspective: 400px;
+}
+[data-number-state="selectable"],
+[data-number-state="pending"] {
+  .box-number-indicator:after {
+    position: absolute;
+    content: "\25B2";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    color: #888;
+  }
+}
+[data-number-state="pending"] {
+  .box-number-indicator:after {
+    color: #000;
+  }
+}
+.number-tile {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  transform-style: preserve-3d;
+  transform: translateZ(-9px);
+  transform-origin: center 88%;
+  transition: transform 0.25s;
+}
+[data-number-state="selectable"]:hover,
+[data-number-state="pending"] {
+    .number-tile {
+      transform: translateZ(-9px) rotateX(-20deg);
+    }
+  }
+[data-number-state="selected"] {
+  .number-tile {
+    transform: translateZ(-9px) rotateX(-70deg);
+  }
+}
+
+$tile-color: #c0b873;
+$tile-color-darker: darken($tile-color, 10%);
+$tile-color-darkest: darken($tile-color, 20%);
+
+.number-tile-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  font-size: 20px;
+  background-color: $tile-color-darker;
+  transform: rotateY(0deg) translateZ(9px);
+}
+.number-tile-top {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  font-size: 14px;
+  background-color: $tile-color;
+  transform: rotateX(90deg) translateZ(9px);
+}
+[data-number-state="selected"] {
+  .number-tile-front {
+    background-color: $tile-color-darkest;
+  }
+  .number-tile-top {
+    background-color: $tile-color-darker;
+  }
+}
+
+.box-number-selector {
+  opacity: 0;
+}
+[data-number-state="selectable"] {
+  .box-number-selector {
+    opacity: 1;
+  }
+}

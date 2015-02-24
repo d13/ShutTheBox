@@ -1,0 +1,112 @@
+.icon {
+  display: inline-block;
+  font: normal normal normal 1em/1 Arial;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  position: relative;
+}
+.icon-die {
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  vertical-align: middle;
+}
+.icon-die-row {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+}
+.icon-die-row-top {
+  top: 0;
+  left: 0;
+  line-height: 1em;
+  height: 1em;
+}
+.icon-die-row-middle {
+  top: 0;
+  left: 0;
+}
+.icon-die-row-bottom {
+  bottom: 0;
+  left: 0;
+  line-height: 1em;
+  height: 1em;
+}
+.icon-die-row-1 {
+  content: "●";
+}
+.icon-die-row-2 {
+  content: "● ●";
+}
+.icon-die-row-3 {
+  content: "●●●";
+}
+[data-die-amt="1"],
+.icon-die-1 {
+  &:before {
+    @extend .icon-die-row;
+    @extend .icon-die-row-1;
+    @extend .icon-die-row-middle;
+  }
+}
+[data-die-amt="2"],
+.icon-die-2 {
+  &:before {
+    @extend .icon-die-row;
+    @extend .icon-die-row-2;
+    @extend .icon-die-row-middle;
+    transform: rotateZ(90deg);
+    transform-origin: 52% 52%;
+  }
+}
+[data-die-amt="3"],
+.icon-die-3 {
+  &:before {
+    @extend .icon-die-row;
+    @extend .icon-die-row-3;
+    @extend .icon-die-row-middle;
+  }
+}
+[data-die-amt="4"],
+.icon-die-4 {
+  &:before {
+    @extend .icon-die-row;
+    @extend .icon-die-row-2;
+    @extend .icon-die-row-top;
+  }
+  &:after {
+    @extend .icon-die-row;
+    @extend .icon-die-row-2;
+    @extend .icon-die-row-bottom;
+  }
+}
+[data-die-amt="5"],
+.icon-die-5 {
+  &:before {
+    @extend .icon-die-row;
+    @extend .icon-die-row-3;
+    @extend .icon-die-row-top;
+  }
+  &:after {
+    @extend .icon-die-row;
+    @extend .icon-die-row-2;
+    @extend .icon-die-row-bottom;
+  }
+}
+[data-die-amt="6"],
+.icon-die-6 {
+  &:before {
+    @extend .icon-die-row;
+    @extend .icon-die-row-3;
+    @extend .icon-die-row-top;
+  }
+  &:after {
+    @extend .icon-die-row;
+    @extend .icon-die-row-3;
+    @extend .icon-die-row-bottom;
+  }
+}

@@ -3,3 +3,5 @@
 
 ## 3rd Party Modules
 node_modules/
+
+.sass-cache

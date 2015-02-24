@@ -1,0 +1,16 @@
+.btn-actions {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.4em 0.6em;
+  cursor: pointer;
+  border: none;
+  background: #ccc;
+  border-radius: 0.2em;
+  color: #333;
+  &:hover {
+    background: #bbb;
+  }
+}

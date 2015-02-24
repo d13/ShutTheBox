@@ -1,0 +1,47 @@
+.base-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.layout-container {
+  @extend .base-container;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+
+  @extend .clearfix;
+}
+.section-container {
+  @extend .layout-container;
+  margin-bottom: 30px;
+}
+
+.app-header {
+  @extend .base-container;
+  @extend .clearfix;
+}
+.app-main {
+  height: 100vh;
+}
+.app-game {
+  @extend .base-container;
+}
+.app-notifier {
+  @extend .layout-container;
+}
+
+.app-players {
+  @extend .section-container;
+}
+
+.app-box {
+  @extend .section-container;
+}
+
+.app-dice {
+  @extend .section-container;
+}
+
+.app-game-controls {
+  @extend .base-container;
+}
